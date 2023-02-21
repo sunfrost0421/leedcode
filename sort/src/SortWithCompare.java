@@ -6,24 +6,43 @@ public class SortWithCompare {
      * @param input：输入排序前数组
      * @return 返回排序后数组
      */
+//    public static int[] bubbleSort(int[] input){
+//        for(int i = 0; i < input.length - 1; i++){
+//            int flag = 0;
+//            for(int j = 0; j < input.length - 1 - i; j++){
+//                if(input[j] > input[j+1]){
+//                    int t = input[j+1];
+//                    input[j+1] = input[j];
+//                    input[j] = t;
+//                    flag = 1;
+//                }
+//            }
+//            if(flag == 0){
+//                break;
+//            }
+//        }
+//        System.out.println(Arrays.toString(input));
+//        return input;
+//    }
     public static int[] bubbleSort(int[] input){
-        for(int i = 0; i < input.length - 1; i++){
-            int flag = 0;
-            for(int j = 0; j < input.length - 1 - i; j++){
-                if(input[j] > input[j+1]){
-                    int t = input[j+1];
-                    input[j+1] = input[j];
-                    input[j] = t;
-                    flag = 1;
+        int temp = 0;
+        boolean flag = false;
+        while(flag == false){
+            flag = true;
+            for(int i = 0; i < input.length - 1; i++){
+                if(input[i] > input[i + 1]){
+                    temp = input[i];
+                    input[i] = input[i + 1];
+                    input[i + 1] = temp;
+                    flag = false;
                 }
-            }
-            if(flag == 0){
-                break;
             }
         }
         System.out.println(Arrays.toString(input));
         return input;
     }
+
+
 
     /**
      * 选择排序:空间复杂度O(1)，时间复杂度O(n2)
@@ -94,8 +113,10 @@ public class SortWithCompare {
     public static void main(String[] args) {
         int[] a = {9,3,7,6,2,1,4,8,0,5};
         bubbleSort(a);
-        insertionSort(a);
-        selectionSort(a);
+//        insertionSort(a);
+//        selectionSort(a);
+
+        //hello
 
     }
 }
